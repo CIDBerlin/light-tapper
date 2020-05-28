@@ -1,0 +1,31 @@
+.score {
+    margin-left: 800px;
+}
+
+.tap {
+    width: 200px;
+    height: 50px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin-left: 750px;
+}
+
+.tap p {
+    text-align: center;
+}
+
+.buy {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    background-color: aqua;
+    text-align: center;
+}
+
+.howCost {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    margin-top: 60px;
+}
+
