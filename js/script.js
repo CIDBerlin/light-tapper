@@ -60,7 +60,7 @@ buy[0].addEventListener('click', () => {
         options.cost += 1;
         score.innerHTML = `<p> Ваш счёт: ${someMoney} монет </p>`;
         buy[0].innerHTML = `<p>Поздравляем с покупкой!</p>`;
-    } else if (options.boost <= 10) {
+    } else if (options.boost <= 10 && options.boost >= 9) {
         buy[0].innerHTML = `<p>Max</p>`; 
     } else {
         buy[0].innerHTML = `<p>Требуется: ${options.cash} </p>`; 
