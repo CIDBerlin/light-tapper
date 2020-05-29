@@ -2,48 +2,72 @@
 
 const score = document.querySelector('.score'),
       tap = document.querySelector('.tap'),
-      text = document.createElement('p'),
-      buy = document.querySelector('.buy'),
-      items = document.querySelector('.item1'),
+      buy = document.querySelectorAll('.newButtonForBuy'),
       howCost = document.querySelector('.howCost');
 
 const options = {
-      money: 0,
+      money: 1,
       boost: 0,
-      cost: [10],
-      cash: [],
-      buyer: function() {
-     if(options.money == 10 && options.money >= 10) {
-         buy.textContent = 'Доступно к покупке';
-         buy.addEventListener('click', () => {
-             options.boost =+ 1;
-     if (options.boost == 1){
-            }
-            buy.textContent = `У вас имеется ${options.boost} буст`;
-         });
-    } else if (options.money < 10) {
-         buy.addEventListener('click', () => {
-         buy.textContent = "Недостаточно средств.";
-         });
-         }                   
-    },
-};
+      number: 0,
+      cost: 0,
+      cash: 1
+    }    
+
+let someMoney = options.cost + options.boost;
 
 tap.addEventListener('click', () => {
-    if(++options.money) {
-        score.innerHTML = `Ваш счёт: ${options.money} монет`;
-        options.buyer();
-    } 
+    if (options.boost == 0) {
+        buy[0].innerHTML = `<p> Boost x1 </p>`;
+    } else if (options.boost == 1) { // Заработало!
+        someMoney+=1;
+        buy[0].innerHTML = `<p>Требуется: ${options.cash} </p>`;
+    } else if (options.boost == 2) {
+        someMoney+=2;
+        buy[0].innerHTML = `<p>Требуется: ${options.cash} </p>`;
+    } else if (options.boost == 3) {
+        someMoney+=3;
+        buy[0].innerHTML = `<p>Требуется: ${options.cash} </p>`;
+    } else if (options.boost == 4) {
+        someMoney+=4;
+        buy[0].innerHTML = `<p>Требуется: ${options.cash} </p>`;
+    } else if (options.boost == 5) {
+        someMoney+=5;
+        buy[0].innerHTML = `<p>Требуется: ${options.cash} </p>`;
+    } else if (options.boost == 6) {
+        someMoney+=6;
+        buy[0].innerHTML = `<p>Требуется: ${options.cash} </p>`;
+    } else if (options.boost == 7) {
+        someMoney+=7;
+        buy[0].innerHTML = `<p>Требуется: ${options.cash} </p>`;
+    } else if (options.boost == 8) {
+        someMoney+=8;
+        buy[0].innerHTML = `<p>Требуется: ${options.cash} </p>`;
+    } else if (options.boost == 9) {
+        someMoney+=9;
+        buy[0].innerHTML = `<p>Требуется: ${options.cash} </p>`;
+    } else if (options.boost == 10) {
+        someMoney+=10;
+        buy[0].innerHTML = `<p> Max </p>`;
+    }
+    score.innerHTML = `<p> Ваш счёт: ${++someMoney} монет </p>`;
 });
 
-// Смена текста.
-howCost.textContent = `Стоимость буста ${options.cost}`;
+buy[0].addEventListener('click', () => {
+    if(someMoney >= options.cash && options.boost < 10) {
+        someMoney -= options.cash;
+        options.cash *= 3;
+        options.boost += 1;
+        options.cost += 1;
+        score.innerHTML = `<p> Ваш счёт: ${someMoney} монет </p>`;
+        buy[0].innerHTML = `<p>Поздравляем с покупкой!</p>`;
+    } else if (options.boost <= 10) {
+        buy[0].innerHTML = `<p>Max</p>`; 
+    } else {
+        buy[0].innerHTML = `<p>Требуется: ${options.cash} </p>`; 
+    }
+});
 
-buy.textContent = "Купить буст";
+buy[0].innerHTML = `<p>Кол-во: 0 </p>`;
 
-text.textContent = 'Нажми на меня';
-
-tap.append(text); // Добавление текста.
-
-console.log(options.boost);
+console.log(someMoney);
 

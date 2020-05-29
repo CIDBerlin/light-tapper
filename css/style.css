@@ -1,31 +1,45 @@
+p {
+    font-family: sans-serif;
+    cursor: default;
+}
+
 .score {
-    margin-left: 800px;
+text-align: center;
 }
 
 .tap {
     width: 200px;
-    height: 50px;
-    background-color: aliceblue;
-    border-radius: 10px;
-    margin-left: 750px;
+    height: 200px;
+    background-color: #262626;
+    border-radius: 100px;
+    margin: auto;
+    margin-top: 50px;
 }
 
 .tap p {
+    position: absolute;
     text-align: center;
+    margin-top: 80px;
+    margin-left: 40px;
+    color: aliceblue;
 }
 
-.buy {
-    position: absolute;
-    width: 150px;
+.newButtonForBuy {
+    position: relative;
+    width: 200px;
     height: 50px;
-    background-color: aqua;
+    background-color: gray;
     text-align: center;
+    margin: auto;
+    margin-left: 50px;
+    margin-top: 100px;
+    border-radius: 20px;
+    display: inline-block;
 }
 
 .howCost {
     position: absolute;
-    width: 200px;
+    width: 250px;
     height: 100px;
-    margin-top: 60px;
 }
 
